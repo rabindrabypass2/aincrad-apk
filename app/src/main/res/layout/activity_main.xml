@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- 100% Fullscreen WebView -->
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000" />
+
+    <!-- Thin Loading Bar -->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:indeterminate="true"
+        android:visibility="gone"
+        android:elevation="15dp" />
+
+    <!-- Compact Floating Header (Slim & Modern) -->
+    <LinearLayout
+        android:id="@+id/floating_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#EA09090B"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="6dp"
+        android:gravity="center_vertical"
+        android:elevation="10dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AINCRAD"
+            android:textColor="#00E5FF"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:paddingEnd="6dp" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ready"
+            android:textColor="#E2E8F0"
+            android:textSize="11sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:fontFamily="monospace" />
+
+        <Button
+            android:id="@+id/btn_airplane"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="✈️ IP"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:backgroundTint="#15803D"
+            android:paddingHorizontal="8dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btn_run_script"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="⚡ SCRIPT"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:backgroundTint="#00E5FF"
+            android:paddingHorizontal="8dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btn_reload"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:text="🔄"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:backgroundTint="#334155"
+            android:padding="0dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp" />
+
+    </LinearLayout>
+
+    <!-- Pure Dark Black Screen Overlay (Shown at 1/6 for 90 Seconds) -->
+    <LinearLayout
+        android:id="@+id/pure_black_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp"
+        android:visibility="gone"
+        android:elevation="20dp"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/tv_black_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="● STAGE 1/6 DETECTED"
+            android:textColor="#00E5FF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.08"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/tv_countdown_seconds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="90"
+            android:textColor="#FFFFFF"
+            android:textSize="96sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:includeFontPadding="false" />
+
+        <TextView
+            android:id="@+id/tv_countdown_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SECONDS REMAINING"
+            android:textColor="#64748B"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.12"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="24dp" />
+
+        <ProgressBar
+            android:id="@+id/black_circular_progress"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:indeterminate="true"
+            android:indeterminateTint="#00E5FF"
+            android:layout_marginBottom="24dp" />
+
+        <TextView
+            android:id="@+id/tv_black_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stealth cooldown active.\nAutomatic script will execute when timer finishes."
+            android:textColor="#94A3B8"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="32dp" />
+
+        <Button
+            android:id="@+id/btn_skip_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:text="⚡ SKIP &amp; RUN SCRIPT NOW"
+            android:textColor="#00E5FF"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:backgroundTint="#0F172A"
+            android:paddingHorizontal="20dp" />
+
+    </LinearLayout>
+
+</FrameLayout>
